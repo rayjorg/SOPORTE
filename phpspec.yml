@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Soporte
+        psr4_prefix: Soporte
+        src_path: app
