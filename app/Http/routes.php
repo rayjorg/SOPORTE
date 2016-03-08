@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-  
-});
- Route::resource('usuario','UsuarioController');
+Route::get('/', 'FrontController@index');
+Route::resource('usuario','UsuarioController');
+Route::resource('log','LogController');
+Route::get('logout','LogController@logout');
+Route::resource('almacen','AlmacenController');
+Route::resource('almacenPc','AlmacenCpuController');

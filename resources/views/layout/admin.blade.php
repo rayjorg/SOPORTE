@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Admin</title>
     <!-- Bootstrap Styles-->
     {!!Html::style('assets/css/bootstrap.css')!!}
@@ -31,21 +32,17 @@
 
             <ul class="nav navbar-top-links navbar-right">
 
-                </li>
+
 
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                        {!!Auth::user()->name!!}<i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
+                      <li class="divider"></li>
+                        <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                      </li>
                     </ul>
                     <!-- /.dropdown-user -->
                 </li>
@@ -58,13 +55,13 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a href="#"><i class="fa fa-user"></i>Usuarios<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-users"></i>Usuarios<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/usuario/create"><i class="fa fa-desktop"></i>Agregar</a>
+                                <a href="/usuario/create"><i class="fa fa-user"></i>Agregar</a>
                             </li>
                             <li>
-                                <a href="/usuario"><i class="fa fa-desktop"></i>Borrar o Actualizar</a>
+                                <a href="/usuario"><i class="fa fa-user"></i>Borrar o Actualizar</a>
                             </li>
                           </ul>
                     </li>
@@ -72,7 +69,27 @@
                         <a href="#"><i class="fa fa-shield"></i>Almacen<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/usuario/create"><i class="fa fa-desktop"></i>Agregar</a>
+
+                                <li>
+                                <a href="#">Agregar<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="/almacenPc"><i class="fa fa-desktop"></i>Equipo Desktop</a>
+                                    </li>
+                                    <li>
+                                        <a href="/almacen"><i class="fa fa-desktop"></i>Equipo Laptop</a>
+                                    </li>
+                                    <li>
+                                        <a href="/almacen"><i class="fa fa-desktop"></i>Consumible PC</a>
+                                    </li>
+                                    <li>
+                                        <a href="/almacen"><i class="fa fa-desktop"></i>Consumible Papeleria</a>
+                                    </li>
+
+                                </ul>
+
+                            </li>
+
                             </li>
                             <li>
                                 <a href="/agregar"><i class="fa fa-desktop"></i>Borrar</a>

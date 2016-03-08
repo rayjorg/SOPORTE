@@ -16,7 +16,7 @@ class AlmacenController extends Controller
      */
     public function index()
     {
-        //
+        return view('almacen.index');
     }
 
     /**
@@ -26,7 +26,7 @@ class AlmacenController extends Controller
      */
     public function create()
     {
-        //
+       return view('almacenPc.create');
     }
 
     /**

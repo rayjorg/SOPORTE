@@ -3,30 +3,29 @@
 namespace Soporte\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Soporte\Http\Requests\UsuarioCreateRequest;
+
 use Soporte\Http\Requests;
 use Soporte\Http\Controllers\Controller;
-use Session;
-use Redirect;
 
-use Soporte\User;
-use Illuminate\Routing\Route;
-
-class UsuarioController extends Controller
+class AlmacenCpuController extends Controller
 {
-  public function __construct(){
-    $this->middleware('auth');
-  }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {   $users=\Soporte\User::paginate(7);
-        return view('usuario.index',compact('users'));
-    }
-
+     public function __construct(){
+       $this->middleware('auth');
+     }
+       /**
+        * Display a listing of the resource.
+        *
+        * @return \Illuminate\Http\Response
+        */
+       public function index()
+       {
+           return view('almacenPc.index');
+       }
 
     /**
      * Show the form for creating a new resource.
@@ -35,7 +34,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-      return view('usuario.create');
+        return view('almacenPc.index');
     }
 
     /**
@@ -46,18 +45,7 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        \Soporte\User::create([
-          'name'    => $request['name'],
-          'email'   => $request['email'],
-          'matricula'   => $request['matricula'],
-          'telefono'   => $request['telefono'],
-          'direccion'   => $request['direccion'],
-          'nivel'   => $request['nivel'],
-          'password'=> $request['password'],
-        ]);
-
-
-            return Redirect::to('/usuario');
+        //
     }
 
     /**
@@ -79,8 +67,7 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-      $user=\Soporte\User::find($id);
-          return view('usuario.edit',['user'=>$user]);
+        //
     }
 
     /**
@@ -92,10 +79,7 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = \Soporte\User::find($id);
-        $user -> fill($request->all());
-        $user -> save();
-        return Redirect::to('/usuario');
+        //
     }
 
     /**
@@ -106,7 +90,6 @@ class UsuarioController extends Controller
      */
     public function destroy($id)
     {
-      \Soporte\User::destroy($id);
-      return Redirect::to('/usuario');
+        //
     }
 }
